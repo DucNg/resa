@@ -1,0 +1,55 @@
+
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+	<title>NightJawaj</title>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+
+
+
+
+<script src="assets/js/html5shiv.js"></script>
+<script src="assets/js/respond.min.js"></script>
+</head>
+<body>
+
+
+	<a href="/"><p align="center">  <img src="img/logo.png"   alt="logo_nightjawaj" width="170"   > </p></a>
+
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="text-center">Ajouter un code de parrainage à {{.Mail}}</h1>
+			</div>
+
+			<div class="modal-body">
+				<form class="modal-md-12 center-block" action="addVoucher" method="post">
+					<div class="form-group">
+						<input type="texte" name="code"   class="form-control input-lg" placeholder="Code parrainage" />
+					</div>
+
+					<h2>Expiration :</h2>
+					<div class="form-group">
+						<input type="datetime-local" id="datepicker" name="expiration" pattern="([0-2][0-9]{3})-([0-1][0-9])-([0-3][0-9])T([0-5][0-9]):([0-5][0-9])"   class="form-control input-lg" placeholder="AAAA-MM-JJTHH:MM" />
+					</div>
+
+					<input type="hidden" name="id" value="{{.Id}}">
+
+					<div class="form-group">
+						<input type="submit" class="btn btn-block btn-lg" value="Ajouter" name="ajouter">
+
+					</div>
+
+
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

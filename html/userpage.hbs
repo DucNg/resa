@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+  <head> 
+    <title> Resa </title> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+   
+   
+<script src="assets/js/html5shiv.js"></script>
+     <script src="assets/js/respond.min.js"></script>
+     </head>
+	 <body>
+	 
+	 	 
+     <a href="/"><p align="center"><img src="img/logo.png" alt="logo" width="170"></p></a>
+	  
+	  
+	  
+	   <h1 align="center">Bienvenue sur votre page {{.Prenom}} {{.Nom}}.</h1>
+
+
+
+      <div class="modal-dialog">
+
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="text-center">Votre invitation</h1>
+              </div>
+
+              <div id="printableArea">
+              <div class="center-block invitation">
+                <img class="img-responsive center-block" src="img/logo.png" alt="logo">
+                <h1>Vous convie à la vente exculsive</h1>
+                <img class="img-responsive center-block" src="img/sos.png" alt="logo SOS">
+                <h2>Vendredi 29 Février 2019 de 10h à 19h</h2>
+                <h2><b>{{.Prenom}} {{.Nom}}<br>{{.Mail}}</b></h2>
+                <h3>1 allée de Londres Villejust</h3>
+              </div>
+              </div>
+
+              <div class="modal-body">
+
+
+                  <div class="form-group">
+                      <input type="button" onclick="printDiv('printableArea')" class="btn btn-block btn-lg" value="Imprimer l'invitation">
+                      <!--<a href="modifprofil.html">modifier profils</a>		-->
+                  </div>
+
+
+
+                  <div class="form-group">
+                      <input type="button" onclick="printPDF('printableArea')" class="btn btn-block btn-lg" value="Enregistrer en pdf">
+                      <!--<a href="tabevennightwaj.html">créer et afficher événement</li> -->
+                  </div>
+
+                  <div class="form-group">
+                      <a href="disconnect"><input type="submit" class="btn btn-block btn-lg" value="Déconnexion"></a>
+                      <!--<a href="tabevennightwaj.html">créer et afficher événement</li> -->
+                  </div>
+
+
+
+
+              </div>
+
+          </div>
+
+          {{if .Voucher}}
+          <br>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="text-center">Votre code de parrainage</h1>
+            </div>
+            <div>
+              <h2 class="text-center">{{.Voucher}}<h2>
+            </div>
+          </div>
+          {{end}}
+
+      </div>
+
+      <script src="assets/js/print.js" type="text/javascript"></script>
+      <script src="assets/js/jquery.js" type="text/javascript"></script>
+      <script src="dist/js/bootstrap.min.js" type="text/javascript"></script>
+     </body>
+</html>
